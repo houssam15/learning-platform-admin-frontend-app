@@ -1,14 +1,14 @@
 import 'package:licence_driving_admin/features/authentication_management/data/models/user.model.dart';
 
 class AuthenticationResponseEntity {
-  final String accessToken;
-  final String refreshToken;
-  final UserModel user;
+  int? localId;
+  final String? accessToken;
+  final String? refreshToken;
 
   AuthenticationResponseEntity({
-    required this.accessToken,
-    required this.refreshToken,
-    required this.user,
+    this.localId,
+    this.accessToken,
+    this.refreshToken,
   });
 
   

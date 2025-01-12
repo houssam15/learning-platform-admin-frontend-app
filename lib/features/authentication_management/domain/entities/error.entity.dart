@@ -1,10 +1,10 @@
 class ErrorEntity {
-  final String code;
-  final String message;
+  final String? code;
+  final List<String> messages;
 
   ErrorEntity({
     required this.code,
-    required this.message,
+    required this.messages,
   });
 
 }

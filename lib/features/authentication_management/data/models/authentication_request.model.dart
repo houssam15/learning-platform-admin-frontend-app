@@ -15,7 +15,7 @@ class AuthenticationRequestModel extends AuthenticationRequestEntity {
   // Convert to JSON for API requests
   Map<String, dynamic> toJson() {
     return {
-      'usernameOrEmail': usernameOrEmail,
+      'emailOrUsername': usernameOrEmail,
       'password': password,
     };
   }

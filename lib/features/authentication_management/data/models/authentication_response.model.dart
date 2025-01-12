@@ -3,17 +3,16 @@ import 'package:licence_driving_admin/features/authentication_management/domain/
 
 class AuthenticationResponseModel extends AuthenticationResponseEntity {
   AuthenticationResponseModel({
+    super.localId,
     required super.accessToken,
-    required super.refreshToken,
-    required super.user,
+    required super.refreshToken
   });
 
   // Factory method for JSON deserialization
   factory AuthenticationResponseModel.fromJson(Map<String, dynamic> json) {
     return AuthenticationResponseModel(
       accessToken: json['accessToken'],
-      refreshToken: json['refreshToken'],
-      user: UserModel.fromJson(json['user']),
+      refreshToken: json['refreshToken']
     );
   }
 
@@ -21,16 +20,15 @@ class AuthenticationResponseModel extends AuthenticationResponseEntity {
   Map<String, dynamic> toJson() {
     return {
       'accessToken': accessToken,
-      'refreshToken': refreshToken,
-      'user': user.toJson(),
+      'refreshToken': refreshToken
     };
   }
 
-  AuthenticationResponseEntity toEntity() {
+  AuthenticationResponseEntity toEntity({int? localId}) {
     return AuthenticationResponseEntity(
+      localId: localId,
       accessToken: accessToken,
-      refreshToken: refreshToken,
-      user: user
+      refreshToken: refreshToken
     );
   }
 }
